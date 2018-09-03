@@ -48,4 +48,8 @@ interval_segmentator = function(x, MAX_INTERVAL_TIME = 60*60, RETURN = 'SEG', TY
   return(R)
 }
 
-
+GET_LAST_BATCH_INDEX = function(x, MAX = 3600){
+  tmp = interval_segmentator(x, MAX_INTERVAL_TIME = MAX, RETURN = '', TYPE = 'time')
+  INDEX = tmp[[length(tmp)]]
+  INDEX
+}
